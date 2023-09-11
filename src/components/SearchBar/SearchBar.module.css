@@ -1,0 +1,65 @@
+.searchBar {
+  margin: 24px 0;
+  display: flex;
+  &Submit {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+  }
+  &Input {
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    color: theme(colors.white);
+    caret-color: theme(colors.red);
+    &::placeholder {
+      color: theme(colors.white);
+      opacity: 0.5;
+    }
+  }
+  &Right {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: theme(colors.greyishBlue);
+      display: none;
+    }
+    &:focus-within::after {
+      display: block;
+    }
+  }
+}
+
+@screen tablet {
+  .searchBar {
+    margin: 33px 0;
+    &Submit {
+      width: 32px;
+      height: 32px;
+      margin-right: 24px;
+    }
+    &Right::after {
+      bottom: -13.8px;
+    }
+  }
+}
+
+@screen desktop {
+  .searchBar {
+    margin-top: 65px;
+    margin-bottom: 34px;
+    &Right::after {
+      bottom: -16px;
+    }
+  }
+}

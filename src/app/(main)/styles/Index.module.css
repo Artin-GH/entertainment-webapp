@@ -1,0 +1,116 @@
+.trending {
+  min-width: 100vw;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 16px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-right: 16px;
+  margin-bottom: 24px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &Item {
+    min-width: 240px;
+    height: 140px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-right: 16px;
+    background-color: theme(colors.greyishBlue);
+    &Overlay {
+      display: none;
+    }
+    &Top,
+    &Bottom {
+      position: relative;
+      z-index: 2;
+    }
+    &Top {
+      &Circle {
+        margin: 8px 8px 0 auto;
+      }
+    }
+    &Bottom {
+      padding: 0 16px 16px 16px;
+      display: flex;
+      align-items: center;
+      &Dot {
+        width: 3px;
+        height: 3px;
+        margin: 0 8px;
+      }
+      &Icon {
+        width: 12px;
+        height: 12px;
+        margin-right: 6px;
+      }
+      &Tags {
+        color: theme(colors.white);
+        opacity: 0.75;
+        display: flex;
+        align-items: center;
+        margin-bottom: 4px;
+      }
+      &RatingMob {
+        margin-left: auto;
+        padding: 2px 8px 3px 8px;
+        color: white;
+        font-size: 13px;
+        font-weight: 300;
+        background-color: theme(colors.white) 26;
+        border-radius: 999px;
+      }
+      &Rating {
+        display: none;
+      }
+    }
+  }
+}
+
+@screen tablet {
+  .trending {
+    padding-right: 9px;
+    margin-bottom: 39px;
+    margin-top: 25px;
+    &Item {
+      min-width: 470px;
+      height: 230px;
+      margin-right: 40px;
+      &Top {
+        &Circle {
+          margin: 16px 24px 0 auto;
+        }
+      }
+      &Bottom {
+        padding: 0 0 24px 24px;
+        &Tags {
+          margin-bottom: 3px;
+        }
+        &Rating {
+          display: inline;
+          &Mob {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@screen desktop {
+  .trending {
+    padding-right: 156px;
+    margin-bottom: 40px;
+    &Item {
+      &:hover &Overlay {
+        display: flex;
+      }
+    }
+  }
+}

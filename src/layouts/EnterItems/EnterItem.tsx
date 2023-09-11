@@ -23,7 +23,7 @@ export const EnterItem: React.FC<{
   if (delNotBookmarks && !isBookmarked) return null;
 
   const handleBookmarkClick = async () => {
-    const newIsBookmarked = !item.isBookmarked;
+    const newIsBookmarked = !isBookmarked;
     dispatch(bookmark([item.id, newIsBookmarked]));
     await bookmarkItem(item, newIsBookmarked);
     router.refresh();
@@ -32,7 +32,7 @@ export const EnterItem: React.FC<{
   return (
     <div className={styles.item}>
       <figure className={styles.itemFigure}>
-        <Image src={item.thumbnail.regular.large} alt="the-great-lands" fill />
+        <Image src={item.thumbnail.regular.large} alt="item" fill />
         <EnterOverlay className={styles.itemFigureOverlay} />
         <BookmarkCircle
           className={styles.itemFigureBookmarkCircle}

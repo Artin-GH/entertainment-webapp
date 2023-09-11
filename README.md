@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [On Frontend Mentor](https://www.frontendmentor.io/solutions/entertainment-app-with-next13-ts-postcss-tailwind-and-redux-toolkit-lS5lqG0dJS)
+- Live Site URL: [Hosted on Vercel](https://entertainment-webapp-red.vercel.app/)
 
 ## My process
 

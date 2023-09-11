@@ -9,14 +9,12 @@ import EnterOverlay from "@/components/EnterOverlay";
 import styles from "./styles/Index.module.css";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { bookmark } from "@/redux/features/itemsSlice";
-import { useRouter } from "next/navigation";
 
 export default function TrendingItem(props: IItem) {
   const isBookmarked = useAppSelector(
     (state) => state.items[props.id]?.isBookmarked ?? props.isBookmarked
   );
   const dispatch = useAppDispatch();
-  const router = useRouter();
 
   return (
     <div className={styles.trendingItem}>
@@ -30,7 +28,6 @@ export default function TrendingItem(props: IItem) {
             const newIsBookmarked = !isBookmarked;
             dispatch(bookmark([props.id, newIsBookmarked]));
             await bookmarkItem(props, newIsBookmarked);
-            router.refresh();
           }}
         />
       </div>

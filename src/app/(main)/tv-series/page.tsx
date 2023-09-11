@@ -17,7 +17,7 @@ export default async function TvSeriesPage({
 
   return (
     <>
-      <SearchBar placeHolder="Search for TV series" />
+      <SearchBar pathName="/tv-series" placeHolder="Search for TV series" />
       <h1 className="heading-lg">{query ? "Found TV Series" : "TV Series"}</h1>
       <EnterItems items={tvSeries} />
     </>

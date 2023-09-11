@@ -19,7 +19,7 @@ export default async function BookmarksPage({
 
   return (
     <>
-      <SearchBar placeHolder="Search for bookmarked shows" />
+      <SearchBar pathName="/bookmarks" placeHolder="Search for bookmarked shows" />
       <h1 className="heading-lg">{query ? "Found " : ""}Bookmarked Movies</h1>
       <EnterItems items={movies} delNotBookmarks={true} />
       <h1 className="heading-lg">

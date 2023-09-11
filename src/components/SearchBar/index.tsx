@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./SearchBar.module.css";
 import SearchIcon from "public/icon-search.svg";
-import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { isQueryValid } from "@/helpers";
 
-const SearchBar: React.FC<{ placeHolder?: string }> = ({ placeHolder }) => {
+const SearchBar: React.FC<{ pathName: string; placeHolder?: string }> = ({
+  pathName,
+  placeHolder,
+}) => {
   const onSearch = async (formData: FormData) => {
     "use server";
-    const headersList = headers();
-    const pathName = headersList.get("x-invoke-path") || "";
     const query = formData.get("q");
     if (!isQueryValid(query)) redirect(pathName);
     redirect(`${pathName}?q=${query}`);

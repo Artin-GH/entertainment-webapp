@@ -19,7 +19,7 @@ export default async function MoviesPage({
 
   return (
     <>
-      <SearchBar placeHolder="Search for movies" />
+      <SearchBar pathName="/movies" placeHolder="Search for movies" />
       <h1 className="heading-lg">{query ? "Found Movies" : "Movies"}</h1>
       <EnterItems items={movies} />
     </>

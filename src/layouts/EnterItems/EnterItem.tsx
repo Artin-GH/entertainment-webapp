@@ -9,13 +9,11 @@ import styles from "./EnterItems.module.css";
 import { IItem, bookmarkItem } from "./item";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { bookmark } from "@/redux/features/itemsSlice";
-import { useRouter } from "next/navigation";
 
 export const EnterItem: React.FC<{
   item: IItem;
   delNotBookmarks?: boolean;
 }> = ({ item, delNotBookmarks }) => {
-  const router = useRouter();
   const isBookmarked = useAppSelector(
     (state) => state.items[item.id]?.isBookmarked ?? item.isBookmarked
   );
@@ -26,7 +24,6 @@ export const EnterItem: React.FC<{
     const newIsBookmarked = !isBookmarked;
     dispatch(bookmark([item.id, newIsBookmarked]));
     await bookmarkItem(item, newIsBookmarked);
-    router.refresh();
   };
 
   return (

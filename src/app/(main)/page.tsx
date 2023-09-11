@@ -17,7 +17,7 @@ export default async function HomePage({
 
   return (
     <>
-      <SearchBar placeHolder="Search for movies or TV series" />
+      <SearchBar pathName="/" placeHolder="Search for movies or TV series" />
       {query ? null : (
         <>
           <h1 className="heading-lg">Trending</h1>

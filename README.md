@@ -45,7 +45,8 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [TypeScript](https://www.typescriptlang.org/) - JS With Syntax For Types
-- [Next.js](https://nextjs.org/) - The React Framework for the Web
+- [Next.js 13](https://nextjs.org/) - The React Framework for the Web
+- [App Router](https://nextjs.org/docs/app/) - The new Next.js router released in Next.js version 13
 - [PostCSS](https://postcss.org/) - A tool for transforming CSS with JS
 - [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework
 - [Redux](https://redux.js.org/) - A Predictable State Container for JS Apps
